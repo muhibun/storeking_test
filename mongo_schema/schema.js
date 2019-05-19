@@ -8,13 +8,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/dishes_db', { useNewUrlParser: true 
 	}
 });
 const Schema = mongoose.Schema;
-
+mongoose.Promise = Promise;
 const dishes = new Schema({
 	dishesId: {
 		type: Number
 	},
   dishesName: {
-		type: String, 
+		type: String,
 		required: true
 	},
   createdDate: {
