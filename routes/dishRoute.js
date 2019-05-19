@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const schema = require('../mongo_schema/schema');
-const uuidv1 = require('uuid/v1');
+//const uuidv1 = require('uuid/v1');
 
 //GET ALL DISHES
 router.get('/', function(req, res, next) {
@@ -17,7 +17,6 @@ router.get('/', function(req, res, next) {
 //INSERT NEW DISH
 router.post('/', function(req, res, next) {
   const new_dish = new schema.dishes({
-    dishesId: uuidv1(),
     dishesName: req.body.dishesName,
     createdDate: new Date().toISOString(),
     isActive: req.body.isActive
